@@ -90,7 +90,7 @@ final class TurboSmsTransport extends AbstractTransport
             if (null === $messageId = $success['response_result'][0]['message_id']) {
                 $responseResult = $success['response_result'][0];
 
-                throw new TransportException(sprintf('Unable to send SMS with TurboSMS: Error code %d with message "%s".', (int) $responseResult['response_code'], $responseResult['response_status']), $response);
+                throw new TransportException(\sprintf('Unable to send SMS with TurboSMS: Error code %d with message "%s".', (int) $responseResult['response_code'], $responseResult['response_status']), $response);
             }
 
             $sentMessage = new SentMessage($message, (string) $this);
